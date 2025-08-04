@@ -39,24 +39,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-  {/* Google AdSense Meta Tag */}
-  <meta name="google-adsense-account" content="ca-pub-1336844014493722" />
+          <head>
+      {/* Google AdSense Meta Tag */}
+      <meta name="google-adsense-account" content="ca-pub-1336844014493722" />
 
-  {/* Google AdSense Script */}
-  <Script
-    id="adsense-script"
-    strategy="afterInteractive"
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1336844014493722"
-    crossOrigin="anonymous"
-  />
+      {/* Google AdSense Script */}
+      <Script
+        id="adsense-script"
+        strategy="afterInteractive"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1336844014493722"
+        crossOrigin="anonymous"
+      />
 
-  {/* Favicon */}
-  <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
-  <link rel="shortcut icon" href="/iconCurrency.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/iconCurrency.png" />
-</head>
+      {/* Favicon */}
+      <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
+      <link rel="shortcut icon" href="/iconCurrency.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/iconCurrency.png" />
+  </head>
       <body className={`${inter.variable} ${notoSansArabic.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
