@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Noto_Sans_Arabic } from 'next/font/google';
 import { ThemeProvider, LanguageProvider } from './providers';
+import Script from 'next/script';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -38,6 +39,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* سكريبت Google AdSense */}
+        <Script
+          id="adsense-script"
+          strategy="afterInteractive"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1336844014493722"
+          crossOrigin="anonymous"
+        />
+        {/* إضافة أيقونة favicon */}
+        {/* <link rel="icon" type="image/png" href="/iconCurrency.png" /> */}
+         <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
+        <link rel="shortcut icon" href="/iconCurrency.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/iconCurrency.png" />
+      </head>
       <body className={`${inter.variable} ${notoSansArabic.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>

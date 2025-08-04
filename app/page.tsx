@@ -5,6 +5,7 @@ import { ThemeToggle } from './components/theme-toggle';
 import { LanguageToggle } from './components/language-toggle';
 import { useLanguage } from './providers';
 import { TrendingUp } from 'lucide-react';
+import AdBanner from './components/AdBanner'; // ✅ استيراد مكون الإعلان
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -46,6 +47,11 @@ export default function Home() {
           </div>
 
           <CurrencyConverter />
+
+          {/* إعلان Google AdSense */}
+          <div className="my-8">
+            <AdBanner />
+          </div>
 
           {/* Features Grid */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
