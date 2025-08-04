@@ -5,7 +5,7 @@ import { ThemeToggle } from './components/theme-toggle';
 import { LanguageToggle } from './components/language-toggle';
 import { useLanguage } from './providers';
 import { TrendingUp } from 'lucide-react';
-import AdBanner from './components/AdBanner'; // ✅ استيراد مكون الإعلان
+import AdBanner from './components/AdBanner';
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -26,7 +26,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-3">
             <LanguageToggle />
             <ThemeToggle />
@@ -46,10 +46,11 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Currency Converter */}
           <CurrencyConverter />
 
-          {/* إعلان Google AdSense */}
-          <div className="my-8">
+          {/* Google AdSense Banner */}
+          <div className="my-8 min-h-[100px]">
             <AdBanner />
           </div>
 
@@ -63,10 +64,9 @@ export default function Home() {
                 {language === 'ar' ? 'أسعار مباشرة' : 'Live Rates'}
               </h3>
               <p className="text-sm text-muted-foreground">
-                {language === 'ar' 
+                {language === 'ar'
                   ? 'أسعار صرف محدثة كل 5 دقائق'
-                  : 'Exchange rates updated every 5 minutes'
-                }
+                  : 'Exchange rates updated every 5 minutes'}
               </p>
             </div>
 
@@ -78,10 +78,9 @@ export default function Home() {
                 {language === 'ar' ? 'عملات متعددة' : 'Multiple Currencies'}
               </h3>
               <p className="text-sm text-muted-foreground">
-                {language === 'ar' 
+                {language === 'ar'
                   ? 'دعم لأكثر من 170 عملة عالمية'
-                  : 'Support for 170+ global currencies'
-                }
+                  : 'Support for 170+ global currencies'}
               </p>
             </div>
 
@@ -93,10 +92,9 @@ export default function Home() {
                 {language === 'ar' ? 'تحويل فوري' : 'Instant Convert'}
               </h3>
               <p className="text-sm text-muted-foreground">
-                {language === 'ar' 
+                {language === 'ar'
                   ? 'تحويل فوري أثناء الكتابة'
-                  : 'Real-time conversion as you type'
-                }
+                  : 'Real-time conversion as you type'}
               </p>
             </div>
           </div>
@@ -107,10 +105,9 @@ export default function Home() {
       <footer className="w-full px-4 py-8 mt-16">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            {language === 'ar' 
+            {language === 'ar'
               ? '© 2025 محول العملات. جميع الحقوق محفوظة.'
-              : '© 2025 Currency Converter. All rights reserved.'
-            }
+              : '© 2025 Currency Converter. All rights reserved.'}
           </p>
         </div>
       </footer>

@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* سكريبت Google AdSense */}
+        {/* Google AdSense Script */}
         <Script
           id="adsense-script"
           strategy="afterInteractive"
@@ -48,9 +48,9 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1336844014493722"
           crossOrigin="anonymous"
         />
-        {/* إضافة أيقونة favicon */}
-        {/* <link rel="icon" type="image/png" href="/iconCurrency.png" /> */}
-         <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
+
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
         <link rel="shortcut icon" href="/iconCurrency.png" type="image/png" />
         <link rel="apple-touch-icon" href="/iconCurrency.png" />
       </head>
