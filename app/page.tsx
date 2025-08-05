@@ -39,9 +39,16 @@ export default function Home() {
       <main className="flex-1 px-4 py-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <h1
+              className={`text-4xl md:text-5xl font-bold mb-4 ${
+                language === 'ar'
+                  ? 'text-foreground'
+                  : 'bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent'
+              }`}
+            >
               {t('title')}
-            </h2>
+            </h1>
+
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('description')}
             </p>
