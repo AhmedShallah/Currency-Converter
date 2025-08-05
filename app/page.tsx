@@ -6,12 +6,13 @@ import { LanguageToggle } from './components/language-toggle';
 import { useLanguage } from './providers';
 import { TrendingUp } from 'lucide-react';
 import AdBanner from './components/AdBanner';
+import Link from 'next/link';
 
 export default function Home() {
   const { t, language } = useLanguage();
 
   return (
-    <div className="min-h-screen gradient-bg">
+    <div className="min-h-screen gradient-bg flex flex-col">
       {/* Header */}
       <header className="w-full px-4 py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -53,62 +54,24 @@ export default function Home() {
           <div className="my-8 min-h-[100px]">
             <AdBanner />
           </div>
-
-          {/* Features Grid */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-effect rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="font-semibold mb-2">
-                {language === 'ar' ? 'أسعار مباشرة' : 'Live Rates'}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {language === 'ar'
-                  ? 'أسعار صرف محدثة كل 5 دقائق'
-                  : 'Exchange rates updated every 5 minutes'}
-              </p>
-            </div>
-
-            <div className="glass-effect rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary-foreground font-bold">170+</span>
-              </div>
-              <h3 className="font-semibold mb-2">
-                {language === 'ar' ? 'عملات متعددة' : 'Multiple Currencies'}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {language === 'ar'
-                  ? 'دعم لأكثر من 170 عملة عالمية'
-                  : 'Support for 170+ global currencies'}
-              </p>
-            </div>
-
-            <div className="glass-effect rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary-foreground font-bold">⚡</span>
-              </div>
-              <h3 className="font-semibold mb-2">
-                {language === 'ar' ? 'تحويل فوري' : 'Instant Convert'}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {language === 'ar'
-                  ? 'تحويل فوري أثناء الكتابة'
-                  : 'Real-time conversion as you type'}
-              </p>
-            </div>
-          </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="w-full px-4 py-8 mt-16">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            {language === 'ar'
-              ? '© 2025 محول العملات. جميع الحقوق محفوظة.'
-              : '© 2025 Currency Converter. All rights reserved.'}
-          </p>
+      <footer className="bg-background border-t mt-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
+          <div className="mb-2 md:mb-0">
+            <Link href="/about" className="hover:underline mx-2">
+              {language === 'ar' ? 'من نحن' : 'About'}
+            </Link>
+            |
+            <Link href="/privacy-policy" className="hover:underline mx-2">
+              {language === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}
+            </Link>
+          </div>
+          <div>
+            © 2025 {language === 'ar' ? 'محول العملات. جميع الحقوق محفوظة.' : 'Currency Converter. All rights reserved.'}
+          </div>
         </div>
       </footer>
     </div>
