@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { Inter, Noto_Sans_Arabic } from 'next/font/google';
 import { ThemeProvider, LanguageProvider } from './providers';
 import Script from 'next/script';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -59,7 +61,15 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${notoSansArabic.variable} font-sans antialiased`}>
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-1">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
