@@ -20,7 +20,7 @@ export function Header() {
   };
 
   return (
-    <header className="w-full px-4 py-6 bg-background border-b border-border">
+    <header className="sticky top-0 z-50 w-full px-4 py-6 backdrop-blur bg-white/90 dark:bg-black/50 border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div 
           className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"

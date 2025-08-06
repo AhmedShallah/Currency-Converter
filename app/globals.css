@@ -35,7 +35,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.75rem;
   }
-  
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -63,12 +63,13 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-family: var(--font-inter);
+    overflow-x: hidden; /* ✅ تمّت إضافته هنا لمنع الانزلاق الأفقي */
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -76,11 +77,11 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, 
-      hsl(var(--background)) 0%, 
+    background: linear-gradient(135deg,
+      hsl(var(--background)) 0%,
       hsl(var(--muted)) 100%);
   }
-  
+
   .glass-effect {
     backdrop-filter: blur(10px);
     background: hsla(var(--card), 0.8);
