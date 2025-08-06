@@ -55,9 +55,9 @@ export default function RootLayout({
         />
 
         {/* Favicon */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/iconCurrency.png" />
-        <link rel="shortcut icon" href="/iconCurrency.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/iconCurrency.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/newicon.png" />
+        <link rel="shortcut icon" href="/newicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/newicon.png" />
       </head>
       <body className={`${inter.variable} ${notoSansArabic.variable} font-sans antialiased`}>
         <ThemeProvider>
