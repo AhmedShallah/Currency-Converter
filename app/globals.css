@@ -69,10 +69,6 @@
     font-family: var(--font-inter);
   }
   
-  [dir="rtl"] body {
-    font-family: var(--font-arabic);
-  }
-  
   html {
     scroll-behavior: smooth;
   }
