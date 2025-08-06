@@ -19,6 +19,10 @@ export function Footer() {
           <Link href="/privacy-policy" className="hover:underline">
             {language === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}
           </Link>
+          <span>|</span>
+          <Link href="/contact" className="hover:underline">
+            {language === 'ar' ? 'اتصل بي' : 'Contact'}
+          </Link>
         </div>
 
         {/* النص الحقوقي */}
