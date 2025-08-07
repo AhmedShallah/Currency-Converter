@@ -25,7 +25,7 @@ export default function Home() {
 
           {/* Google AdSense Banner */}
           <div className="my-10 min-h-[100px]">
-            <AdBanner />
+            {/* <AdBanner /> */}
           </div>
         </div>
       </div>

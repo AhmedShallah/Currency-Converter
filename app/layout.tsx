@@ -42,17 +42,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google AdSense Meta Tag */}
-        <meta name="google-adsense-account" content="ca-pub-1336844014493722" />
-
-        {/* Google AdSense Script */}
-        <Script
-          id="adsense-init"
+        {/* Google AdSense Verification Script */}
+        <script
           async
-          strategy="beforeInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1336844014493722"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-1336844014493722"
           crossOrigin="anonymous"
-        />
+        ></script>
 
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/newicon.png" />
