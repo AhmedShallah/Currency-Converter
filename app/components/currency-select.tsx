@@ -52,36 +52,36 @@ export function CurrencySelect({ value, onChange, className = '' }: CurrencySele
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-3 px-4 py-3 bg-card border border-border rounded-xl hover:bg-accent transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        className="w-full flex items-center justify-between gap-3 px-4 py-3 bg-card border border-border rounded-xl hover:bg-accent transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       >
         <div className="flex items-center gap-3">
           <span className="text-xl">{selectedCurrency?.flag}</span>
           <div className="flex flex-col items-start">
-            <span className="font-semibold text-sm">{selectedCurrency?.code}</span>
-            <span className="text-xs text-muted-foreground truncate max-w-24">
+            <span className="font-semibold text-sm transition-colors duration-500 ease-in-out">{selectedCurrency?.code}</span>
+            <span className="text-xs text-muted-foreground truncate max-w-24 transition-colors duration-500 ease-in-out">
               {selectedCurrency?.name}
             </span>
           </div>
         </div>
         <ChevronDown 
-          className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${
+          className={`w-4 h-4 text-muted-foreground transition-all duration-500 ease-in-out ${
             isOpen ? 'rotate-180' : ''
           }`} 
         />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-popover border border-border rounded-xl shadow-lg z-50 max-h-80 overflow-hidden">
-          <div className="p-3 border-b border-border">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-popover border border-border rounded-xl shadow-lg z-50 max-h-80 overflow-hidden transition-all duration-500 ease-in-out">
+          <div className="p-3 border-b border-border transition-colors duration-500 ease-in-out">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground transition-colors duration-500 ease-in-out" />
               <input
                 ref={searchInputRef}
                 type="text"
                 placeholder="Search currencies..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                className="w-full pl-10 pr-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-sm transition-all duration-500 ease-in-out"
               />
             </div>
           </div>
@@ -91,15 +91,15 @@ export function CurrencySelect({ value, onChange, className = '' }: CurrencySele
               <button
                 key={currency.code}
                 onClick={() => handleSelect(currency)}
-                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-accent transition-colors duration-150 text-left"
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-accent transition-all duration-500 ease-in-out text-left"
               >
                 <span className="text-lg">{currency.flag}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-sm">{currency.code}</span>
-                    <span className="text-xs text-muted-foreground">{currency.symbol}</span>
+                    <span className="font-semibold text-sm transition-colors duration-500 ease-in-out">{currency.code}</span>
+                    <span className="text-xs text-muted-foreground transition-colors duration-500 ease-in-out">{currency.symbol}</span>
                   </div>
-                  <span className="text-xs text-muted-foreground truncate block">
+                  <span className="text-xs text-muted-foreground truncate block transition-colors duration-500 ease-in-out">
                     {currency.name}
                   </span>
                 </div>

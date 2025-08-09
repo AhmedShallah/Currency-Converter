@@ -20,18 +20,18 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 py-6 backdrop-blur bg-white/90 dark:bg-black/50 border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 w-full px-4 py-6 backdrop-blur bg-white/90 dark:bg-black/50 border-b border-border shadow-sm transition-all duration-500 ease-in-out">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div 
-          className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+          className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-all duration-500 ease-in-out"
           onClick={handleLogoClick}
         >
-          <div className="p-2 bg-primary rounded-xl">
+          <div className="p-2 bg-primary rounded-xl transition-colors duration-500 ease-in-out">
             <TrendingUp className="w-6 h-6 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">{t('title')}</h1>
-            <p className="text-sm text-muted-foreground hidden sm:block">
+            <h1 className="text-xl font-bold transition-colors duration-500 ease-in-out">{t('title')}</h1>
+            <p className="text-sm text-muted-foreground hidden sm:block transition-colors duration-500 ease-in-out">
               {t('description')}
             </p>
           </div>

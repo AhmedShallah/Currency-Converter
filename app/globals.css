@@ -73,6 +73,16 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Smooth transitions for all elements */
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Specific smooth transitions for interactive elements */
+  button, input, select, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 @layer components {

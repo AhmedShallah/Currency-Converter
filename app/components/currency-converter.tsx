@@ -75,11 +75,11 @@ export function CurrencyConverter() {
               value={amount}
               onChange={(e) => handleAmountChange(e.target.value)}
               placeholder={t('enterAmount')}
-              className="w-full px-6 py-4 text-2xl font-semibold bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-200"
+              className="w-full px-6 py-4 text-2xl font-semibold bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-500 ease-in-out"
               dir="ltr"
             />
             {fromCurrencyData && (
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground">
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground transition-colors duration-500 ease-in-out">
                 {fromCurrencyData.symbol}
               </div>
             )}
@@ -100,7 +100,7 @@ export function CurrencyConverter() {
 
           <button
             onClick={handleSwapCurrencies}
-            className="order-first md:order-none mb-8 md:mb-0 mx-auto p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            className="order-first md:order-none mb-8 md:mb-0 mx-auto p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-500 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             aria-label={t('swap')}
           >
             <ArrowUpDown className="w-5 h-5" />
@@ -118,18 +118,18 @@ export function CurrencyConverter() {
         </div>
 
         {/* Conversion Result */}
-        <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl p-6 border border-primary/20">
+        <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl p-6 border border-primary/20 transition-all duration-500 ease-in-out">
           {isLoading ? (
-            <div className="flex items-center justify-center gap-3 text-muted-foreground">
+            <div className="flex items-center justify-center gap-3 text-muted-foreground transition-colors duration-500 ease-in-out">
               <Loader2 className="w-5 h-5 animate-spin" />
               <span className="text-lg">{t('loading')}</span>
             </div>
           ) : (
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2" dir="ltr">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2 transition-colors duration-500 ease-in-out" dir="ltr">
                 {toCurrencyData?.symbol}{formatNumber(convertedAmount)}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground transition-colors duration-500 ease-in-out">
                 {amount && Number(amount) > 0 && (
                   <span dir="ltr">
                     {fromCurrencyData?.symbol}{formatNumber(Number(amount))} {fromCurrency} = {toCurrencyData?.symbol}{formatNumber(convertedAmount)} {toCurrency}
@@ -142,7 +142,7 @@ export function CurrencyConverter() {
 
         {/* Last Updated */}
         {lastUpdated && !isLoading && (
-          <div className="text-center mt-4 text-xs text-muted-foreground">
+          <div className="text-center mt-4 text-xs text-muted-foreground transition-colors duration-500 ease-in-out">
             {language === 'ar' ? 'آخر تحديث: ' : 'Last updated: '}
             <span dir="ltr">
               {lastUpdated.toLocaleTimeString(language === 'ar' ? 'ar-SA' : 'en-US', {
